@@ -1,0 +1,38 @@
+<head>
+  <title>af-select2-array-test</title>
+</head>
+
+<body>
+
+<h1>Problem</h1>
+When the +/- buttons are pressed, the value of the "Year number" field is not maintained.<br />
+If the input type is changed from select2 to a normal select, it works properly.
+<ol>
+<li>Select a year from the "Year number" dropdown and enter text in the Note field</li>
+<li>Press the + button</li>
+<li>Notice that the year has disappeared, but the Note text is maintained</li>
+</ol>
+<hr />
+
+<div style="width:30%">
+  <h3>Form with select2 element</h3>
+  {{> insertYears2Form}}
+</div>
+
+<hr />
+
+<div style="width:30%">
+   <h3>Form with normal select element</h3>
+  {{> insertYearsForm}}
+</div>
+
+</body>
+
+<template name="insertYearsForm">
+  {{> quickForm collection="Years" id="insertYearsForm" type="insert"}}
+</template>
+
+<template name="insertYears2Form">
+  {{> quickForm collection="Years2" id="insertYears2Form" type="insert"}}
+</template>
+
